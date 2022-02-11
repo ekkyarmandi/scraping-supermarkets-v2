@@ -21,11 +21,7 @@ The objective I looking for is:
 * product nutritions score (if availabale)
 
 ## Script Development
-<<<<<<< HEAD
 All the script in this project developed in jupyter notebook (*.ipynb) first using requests, beautifulsoup, json, regex, asyncio, and aiohttp modules. For more details, requests module used to make a server GET/POST request on the backend, while beautifulsoup from bs4 module used to converting the html into bs4 object to make it easy extracting the desired data from the html tags. REGEX and JSON module used to manupulate strings and write out the data as JSON files. The last but not least, asyncio and aiohttp are used to make a asynchronous scraping system where aiohttp for the requests task and asyncio for the asynchronous tasks.
-=======
-All the script in this project developed using requests, beautifulsoup, json, regex, asyncio, and aiohttp modules. For more details, requests module used to make a server GET/POST request on the backend, while beautifulsoup from bs4 module used to converting the html into bs4 object to make it easy to extracting the desired data from the html tags. REGEX and JSON module used to manipulate strings and write out the data as JSON files. The last but not least, asyncio and aiohttp are used to make a asynchronous scraping system where aiohttp for the requests task and asyncio for the asyncronous tasks.
->>>>>>> cfd7cbe568744a8e28e3653428aa41093ea95bec
 
 ## Requirement Installations
 ```python
