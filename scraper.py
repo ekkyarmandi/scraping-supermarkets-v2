@@ -6,7 +6,7 @@ import requests
 import asyncio
 
 # import logic libraries
-from AhHollandia import logic
+from SparHL import logic
 from printer import print_green, print_red, print_yellow
 
 def async_render(index,urls,dest_folder):
@@ -55,7 +55,7 @@ beginning = time.time()
 speed = [] # timespeed variable
 
 # prepare the destionation folder
-project_name = "AhHollandia"
+project_name = "SparHL"
 dest_folder = f"./{project_name}/raw_data/"
 
 # read all the product urls
@@ -89,10 +89,10 @@ for r in range(st,R):
         a, b = x[r], x[r+1]
 
         # render all the urls asynchronously
-        # results = async_render(index[a:b],urls[a:b],dest_folder)
+        results = async_render(index[a:b],urls[a:b],dest_folder)
 
         # render all the urls synchronously
-        results = manual_render(index[a:b],urls[a:b],dest_folder)
+        # results = manual_render(index[a:b],urls[a:b],dest_folder)
 
         # printout the timestamp
         end = time.time()
