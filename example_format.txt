@@ -1,0 +1,12 @@
+{
+    "code" : "",
+    "sources" : ["https://www.auchan.fr/auchan-saumon-fume-de-norvege-mini/pr-C1182526"],
+    "image_url" : "https://media.auchan.fr/MEDIASTEP65568709_512x512/B2CD/",
+    "small_image_url" : "https://media.auchan.fr/MEDIASTEP65568709_512x512/B2CD/",
+    "product_name" : "",
+    "brand" : "",
+    "nutriscore" : "",
+    "categories" : ["Accueil", "Boucherie"],
+    "ingredients_text" : "",
+    "calories" : "",
+}

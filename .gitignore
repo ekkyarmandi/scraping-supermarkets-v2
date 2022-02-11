@@ -1,3 +1,7 @@
 project/
+.vscode/
 *.ipynb_checkpoints/
+*__pycache__/
+*/data/*.json
+*/raw_data/*.json
 supermarkets.txt
