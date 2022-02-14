@@ -44,16 +44,37 @@ async def render(session, functions, url):
     except:
         return None
 
+async def proxy_render(session, functions, url):
+    loop = asyncio.get_event_loop()
+    all_proxies = json.load(open("proxies.json"))
+    i = 0
+    while True:
+        try:
+            proxy = f"https://{all_proxies[i]}/"
+            async with session.get(url,proxy=proxy) as r:
+                result = await loop.run_in_executor(None, functions, url, await r.text())
+                print(result)
+                return result
+        except Exception as E:
+            print(f"{proxy} ({E})")
+            i += 1
+
 async def gather(session, functions, urls):
     tasks = []
     for url in urls:
         task = asyncio.create_task(render(session, functions, url))
+        # task = asyncio.create_task(proxy_render(session, functions, url))
         tasks.append(task)
     results = await asyncio.gather(*tasks)
     return results
 
 headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"}
 async def render_all(functions, urls):
+    async with aiohttp.ClientSession(headers=headers) as session:
+        data = await gather(session, functions, urls)
+        return data
+
+async def rotating_render(functions, urls):
     async with aiohttp.ClientSession(headers=headers) as session:
         data = await gather(session, functions, urls)
         return data
